@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const rateLimit = require('express-rate-limit'); // For rate limiting
 const winston = require('winston'); // For logging (optional, but recommended)
-require('dotenv').config(); // Load environment variables
+require('dotenv').config({ path: '../.env' }); // Load environment variables
 
 // Create an Express application
 const app = express();
