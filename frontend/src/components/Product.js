@@ -3,11 +3,15 @@ import axios from 'axios';
 
 const Product = ({ product, onDelete }) => {
   const handleDelete = async () => {
+    const confirmDelete = window.confirm(`Are you sure you want to delete ${product.name}?`);
+    if (!confirmDelete) return;
+    
     try {
       await axios.delete(`http://localhost:5000/api/products/${product._id}`);
       onDelete(product._id);
     } catch (error) {
       console.error('Failed to delete product:', error);
+      alert('Could not delete product. Please try again.');
     }
   };
 

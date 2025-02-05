@@ -10,9 +10,11 @@ const ProductList = () => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get('http://localhost:5000/api/products');
-        setProducts(response.data);
+        console.log('API Response:', response.data); // 🔍 Log to debug
+        setProducts(Array.isArray(response.data) ? response.data : []); // ✅ Ensure it's an array
       } catch (error) {
         console.error('Error fetching products:', error);
+        alert('Failed to fetch products. Please try again later.');
       }
     };
     fetchProducts();

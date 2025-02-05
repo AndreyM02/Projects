@@ -1,66 +1,92 @@
 const express = require('express');
 const Product = require('../models/Product');
+const { body, validationResult } = require('express-validator'); // For input validation
 
 const router = express.Router();
 
-// Get all products
-router.get('/', async (req, res) => {
-    try {
-        const products = await Product.find();
-        res.json(products);
-    } catch (error) {
-        res.status(500).json({ message: error.message });
-    }
-});
+// Middleware for error handling
+const asyncHandler = fn => (req, res, next) => {
+    Promise.resolve(fn(req, res, next)).catch(next);
+};
 
-// Get a single product by ID
-router.get('/:id', async (req, res) => {
-    try {
-        const product = await Product.findById(req.params.id);
+// Input validation rules
+const productValidationRules = [
+    body('name').optional().notEmpty().withMessage('Name must not be empty'),
+    body('price').optional().isFloat({ min: 0 }).withMessage('Price must be a positive number'),
+    body('category').optional().notEmpty().withMessage('Category must not be empty'),
+];
+
+// GET all products with pagination
+router.get(
+    '/',
+    asyncHandler(async (req, res) => {
+        const { page = 1, limit = 10 } = req.query;
+
+        const products = await Product.find()
+            .limit(limit * 1) // Convert to number
+            .skip((page - 1) * limit)
+            .lean();
+
+        const count = await Product.countDocuments();
+
+        res.json({
+            products,
+            totalPages: Math.ceil(count / limit),
+            currentPage: Number(page),
+        });
+    })
+);
+
+// GET a single product by ID
+router.get(
+    '/:id',
+    asyncHandler(async (req, res) => {
+        const product = await Product.findById(req.params.id).lean();
         if (!product) return res.status(404).json({ message: 'Product not found' });
         res.json(product);
-    } catch (error) {
-        res.status(500).json({ message: error.message });
-    }
-});
+    })
+);
 
-// Create a new product
-router.post('/', async (req, res) => {
-    const product = new Product({
-        name: req.body.name,
-        description: req.body.description,
-        price: req.body.price,
-        imageUrl: req.body.imageUrl,
-        category: req.body.category
-    });
-    try {
+// POST a new product
+router.post(
+    '/',
+    productValidationRules, // Validation rules
+    asyncHandler(async (req, res) => {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.status(400).json({ errors: errors.array() });
+        }
+
+        const product = new Product(req.body);
         const newProduct = await product.save();
         res.status(201).json(newProduct);
-    } catch (error) {
-        res.status(400).json({ message: error.message });
-    }
-});
+    })
+);
 
-// Update a product by ID
-router.put('/:id', async (req, res) => {
-    try {
+// PUT (update) a product by ID
+router.put(
+    '/:id',
+    productValidationRules, // Validation rules
+    asyncHandler(async (req, res) => {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.status(400).json({ errors: errors.array() });
+        }
+
         const updatedProduct = await Product.findByIdAndUpdate(req.params.id, req.body, { new: true });
         if (!updatedProduct) return res.status(404).json({ message: 'Product not found' });
         res.json(updatedProduct);
-    } catch (error) {
-        res.status(400).json({ message: error.message });
-    }
-});
+    })
+);
 
-// Delete a product by ID
-router.delete('/:id', async (req, res) => {
-    try {
+// DELETE a product by ID
+router.delete(
+    '/:id',
+    asyncHandler(async (req, res) => {
         const product = await Product.findByIdAndDelete(req.params.id);
         if (!product) return res.status(404).json({ message: 'Product not found' });
-        res.json({ message: 'Product deleted' });
-    } catch (error) {
-        res.status(500).json({ message: error.message });
-    }
-});
+        res.json({ message: 'Product deleted successfully' });
+    })
+);
 
 module.exports = router;

@@ -1,0 +1,15 @@
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-01-27T20:16:45.904Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-01-27T20:16:47.255Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-01-27T20:40:33.569Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-01-27T20:40:34.535Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-01-27T20:40:53.124Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-01-27T20:40:54.362Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-01-27T20:47:38.260Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-01-27T20:47:39.283Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-01-27T21:12:47.127Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-01-27T21:12:48.087Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-01-29T05:41:15.555Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-01-29T05:41:16.471Z"}
+{"level":"error","message":"Unhandled Error: Product validation failed: imageUrl: Path `imageUrl` is required.","timestamp":"2025-01-29T06:48:54.165Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-01-29T06:51:49.348Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-01-29T06:51:50.319Z"}
