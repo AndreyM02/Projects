@@ -13,3 +13,17 @@
 {"level":"error","message":"Unhandled Error: Product validation failed: imageUrl: Path `imageUrl` is required.","timestamp":"2025-01-29T06:48:54.165Z"}
 {"level":"info","message":"Server running on port 5000","timestamp":"2025-01-29T06:51:49.348Z"}
 {"level":"info","message":"MongoDB connected successfully","timestamp":"2025-01-29T06:51:50.319Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-05T01:46:49.653Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-05T01:46:50.656Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-05T02:31:20.355Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-05T02:31:21.328Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-05T05:11:15.951Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-05T05:11:16.983Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-11T05:21:31.517Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-11T05:21:32.834Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-11T06:12:09.492Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-11T06:12:10.511Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-11T06:52:24.192Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-11T06:52:25.162Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-11T06:56:46.832Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-11T06:56:47.827Z"}

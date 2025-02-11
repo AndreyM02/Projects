@@ -55,8 +55,11 @@ mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
 // Import Routes
 const productRoutes = require('./routes/productRoutes');
 
+const authRoutes = require('./routes/authRoutes');
+
 // Mount Routes
 app.use('/api/products', productRoutes);
+app.use('/api/auth', authRoutes);
 
 // Root Endpoint
 // A simple test route to confirm API is running
@@ -86,3 +89,6 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     logger.info(`Server running on port ${PORT}`);
 });
+
+
+
