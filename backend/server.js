@@ -57,9 +57,13 @@ const productRoutes = require('./routes/productRoutes');
 
 const authRoutes = require('./routes/authRoutes');
 
+//ONLY FOR TESTING PURPOSES
+const adminRoutes = require('./routes/adminRoutes');
+
 // Mount Routes
 app.use('/api/products', productRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/admin', adminRoutes);    
 
 // Root Endpoint
 // A simple test route to confirm API is running

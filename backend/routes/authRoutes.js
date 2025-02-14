@@ -5,6 +5,7 @@ const { body, validationResult } = require('express-validator');
 const User = require('../models/User');
 const authMiddleware = require('../middleware/authMiddleware');
 
+
 const router = express.Router();
 
 
@@ -49,7 +50,7 @@ router.post(
 
       // Create a JWT token
       const token = jwt.sign(
-        { userId: user._id, email: user.email },
+        { userId: user._id, email: user.email, role: user.role },
         process.env.JWT_SECRET,
         { expiresIn: '1h' }
       );
@@ -93,7 +94,7 @@ router.post(
 
       // Optionally, create a JWT token for immediate authentication after registration
       const token = jwt.sign(
-        { userId: user._id, email: user.email },
+        { userId: user._id, email: user.email, role: user.role },
         process.env.JWT_SECRET,
         { expiresIn: '1h' }
       );

@@ -14,6 +14,6 @@ async function verifyPassword(plainTextPassword, storedHash) {
 }
 
 // Example stored hash (from your backend) for the password "password"
-const storedHash = '$2b$10$M/NKSMGoZFZEqZJ3m8JHxuwIBanXK53QWTJ82wP3Ug7sf6hH/XalW'; // Example hash
+const storedHash = '$2b$10$6U.J9sQns/leKOeK8usbiOn8Q2b1DXYBbdKQR9xEHttxBrgXgPrm.'; // Example hash
 
-verifyPassword('newpassword', storedHash);
+verifyPassword('password123', storedHash);

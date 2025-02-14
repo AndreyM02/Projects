@@ -2,18 +2,27 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { jwtDecode } from 'jwt-decode';
 import Product from './Product';
+import { useNavigate } from 'react-router-dom';
 // import ProductForm from './ProductForm';
 import './ProductList.css';
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
   const [userInfo, setUserInfo] = useState(null);
+  const navigate = useNavigate();
 
   // Automatically fetch products when the component mounts
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/products');
+         // Retrieve token from localStorage
+         const token = localStorage.getItem('token');
+         const config = {
+           headers: {
+             Authorization: `Bearer ${token}`,
+           },
+         };
+        const response = await axios.get('http://localhost:5000/api/products', config);
         // Update here: extract the products array from the response object
         setProducts(response.data.products || []);
       } catch (error) {
@@ -23,7 +32,7 @@ const ProductList = () => {
     };
 
     const token = localStorage.getItem('token');
-        // console.log("Token from localStorage:", token);
+         console.log("Token from localStorage:", token);
         if (token) {
           try {
             const decoded = jwtDecode(token);
@@ -44,6 +53,14 @@ const ProductList = () => {
   // Callback to delete a product
   const handleDeleteProduct = (id) => {
     setProducts(prevProducts => prevProducts.filter(product => product._id !== id));
+  };
+
+  const handleLogout = () => {
+    // Remove the JWT from localStorage
+    localStorage.removeItem('token');
+    // Optionally, you can also clear any additional user data from your state management
+    // Redirect the user to the login page or home page
+    navigate('/login');
   };
 
   return (
@@ -75,6 +92,9 @@ const ProductList = () => {
       ) : (
         <p>No products available.</p>
       )}
+      <div className="logout-button">
+            <button onClick={handleLogout}>Logout</button>
+        </div>
     </div>
   );
 };
