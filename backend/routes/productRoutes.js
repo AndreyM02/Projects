@@ -1,8 +1,10 @@
 const express = require('express');
 const Product = require('../models/Product');
+const User = require('../models/User');
 const { body, validationResult } = require('express-validator'); // For input validation
 const authMiddleware = require('../middleware/authMiddleware');
 const roleMiddleware = require('../middleware/roleMiddleware');
+
 
 const router = express.Router();
 
@@ -47,7 +49,10 @@ router.get('/', authMiddleware, async (req, res) => {
       if (req.user.role === 'seller') {
         query = { seller: req.user.userId };
       }
-      const products = await Product.find(query).lean();
+    //   const products = await Product.find(query).lean();
+    const products = await Product.find(query)
+  .populate('seller', 'email')
+  .lean();
       const count = await Product.countDocuments(query);
       res.json({ products, total: count });
     } catch (err) {
@@ -120,5 +125,52 @@ router.delete(
         res.json({ message: 'Product deleted successfully' });
     })
 );
+
+// Endpoint for admins to reassign a product's seller by email
+router.put(
+    '/:id/assign',
+    authMiddleware,
+    roleMiddleware('admin'),
+    async (req, res) => {
+      const { sellerEmail } = req.body; // Expect sellerEmail in the request body
+  
+      if (!sellerEmail) {
+        return res.status(400).json({ message: 'sellerEmail is required.' });
+      }
+  
+      try {
+        // Find the user by email
+        const sellerUser = await User.findOne({ email: sellerEmail });
+        if (!sellerUser) {
+          return res.status(404).json({ message: 'Seller not found.' });
+        }
+        
+        // Optionally, check if the found user has the role of 'seller'
+        if (sellerUser.role !== 'seller' && sellerUser.role !== 'admin') {
+          return res.status(403).json({ message: 'User is not eligible to be assigned as a seller.' });
+        }
+  
+        // Update the product's seller field using the user's _id
+        const updatedProduct = await Product.findByIdAndUpdate(
+          req.params.id,
+          { seller: sellerUser._id },
+          { new: true }
+        );
+        if (!updatedProduct) {
+          return res.status(404).json({ message: 'Product not found.' });
+        }
+  
+        res.json(updatedProduct);
+      } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: 'Server error.' });
+      }
+    }
+  );
+  
+  module.exports = router; 
+
+
+
 
 module.exports = router;

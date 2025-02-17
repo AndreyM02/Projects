@@ -1,0 +1,26 @@
+/* frontend/src/components/AdminDashboard.css */
+.admin-dashboard {
+    padding: 2rem;
+    background: #f8f9fa;
+  }
+  
+  .tab-buttons {
+    margin-bottom: 1rem;
+  }
+  
+  .tab-buttons button {
+    margin-right: 10px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  
+  .tab-buttons button.active {
+    background: #007bff;
+    color: #fff;
+  }
+  
+  .tab-content {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+  }
