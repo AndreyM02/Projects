@@ -12,6 +12,8 @@ import ProductForm from './components/ProductForm';
 import ProductAssignment from './components/ProductAssignment';
 import AdminDashboard from './components/AdminDashboard';
 import UserManagement from './components/UserManagement';
+import LandingPage from './components/LandingPage';
+import ShoppingCart from './components/ShoppingCart';
 
 
 
@@ -19,11 +21,13 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/register" element={<Register />} />
+        <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/" element={<ProductList />} />
-        <Route path = "/add-product" element = {<ProductForm />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/products" element={<ProductList />} />
+        <Route path="/add-product" element={<ProductForm />} />
         <Route path="/change-password" element={<Profile />} />
+        <Route path="/cart" element={<ShoppingCart />} />
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/admin/users" element={<UserManagement />} />
         <Route path="/product-assignment" element={<ProductAssignment />} />

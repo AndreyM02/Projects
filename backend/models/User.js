@@ -18,7 +18,7 @@ const userSchema = new mongoose.Schema({
   role: {
     type: String,
     enum: ['admin', 'seller', 'buyer'],
-    default: 'seller', // For example, default new users as buyers
+    default: 'buyer', // For example, default new users as buyers
   },
   
   createdAt: {
