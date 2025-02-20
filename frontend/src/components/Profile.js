@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { jwtDecode } from 'jwt-decode';
+import './Profile.css';
 
 const Profile = () => {
   const [userInfo, setUserInfo] = useState(null);

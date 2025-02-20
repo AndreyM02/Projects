@@ -1,14 +1,18 @@
 // frontend/src/components/LandingPage.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
-// import { useNavigate } from 'react-router-dom';
+import ProductCatalog from './ProductCatalog';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+//import { useNavigate } from 'react-router-dom';
 
 import './LandingPage.css';
 
 const LandingPage = () => {
   const [featuredProducts, setFeaturedProducts] = useState([]);
-  const [userInfo, setUserInfo] = useState(null);
+   const [userInfo, setUserInfo] = useState(null);
 //   const navigate = useNavigate();
 
   useEffect(() => {
@@ -45,60 +49,79 @@ const LandingPage = () => {
     fetchFeaturedProducts();
   }, []);
 
-  return (
-    <div className="landing-container">
-      <header className="landing-header">
-        <h1>Welcome to Our Handmade Goods Marketplace</h1>
-        <p>Discover unique, handcrafted items made with love.</p>
-        {userInfo && (
-        <p>
-          Profile <strong>{userInfo.email}</strong>
-        </p>
-      )}
-        <div className="cta-buttons">
-          <a href="/login" className="btn">Login</a>
-          <a href="/register" className="btn">Register</a>
-        </div>
-      </header>
 
-      <section className="featured-products">
-        <h2>Featured Products</h2>
-        <div className="product-grid">
-          {featuredProducts.length > 0 ? (
-            featuredProducts.map(product => (
-              <div className="product-card" key={product._id}>
-                <img src={product.imageUrl || 'https://via.placeholder.com/200'} alt={product.name} />
-                <h3>{product.name}</h3>
-                <p>${product.price.toFixed(2)}</p>
-              </div>
-            ))
-          ) : (
-            <>
-              {/* <div className="product-card">
-                <img src="https://via.placeholder.com/200" alt="Handmade Mug" />
-                <h3>Handmade Mug</h3>
-                <p>$25.00</p>
-              </div>
-              <div className="product-card">
-                <img src="https://via.placeholder.com/200" alt="Artisan Necklace" />
-                <h3>Artisan Necklace</h3>
-                <p>$40.00</p>
-              </div>
-              <div className="product-card">
-                <img src="https://via.placeholder.com/200" alt="Woven Basket" />
-                <h3>Woven Basket</h3>
-                <p>$35.00</p>
-              </div> */}
-            </>
-          )}
-        </div>
-      </section>
 
-      <footer className="landing-footer">
-        <p>&copy; 2025 Handmade Goods Marketplace. All rights reserved.</p>
-      </footer>
+return (
+
+
+<div className="landing-container">
+{/* Navigation Bar */}
+<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div className="container">
+    <Link className="navbar-brand" to="/">Handmade Marketplace</Link>
+    <div className="ms-auto">
+      <Link className="btn btn-outline-light me-2" to="/login">Login</Link>
+      <Link className="btn btn-outline-light" to="/cart">
+        <i className="bi bi-cart-fill"></i> Cart
+      </Link>
     </div>
-  );
+  </div>
+</nav>
+
+{/* Hero Section */}
+<header className="landing-header" style={{ backgroundImage: "url('https://via.placeholder.com/1200x400')" }}>
+  <div className="hero-content container text-center text-white" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.7)' }}>
+    <h1 className="display-4">Welcome to Our Handmade Goods Marketplace</h1>
+    <p className="lead">Discover unique, handcrafted items made with love.</p>
+  </div>
+</header>
+
+{/* Featured Products Section */}
+<section className="py-5 featured-products">
+  <div className="container">
+    <h2 className="mb-4 text-center">Featured Products</h2>
+    <div className="row">
+      {featuredProducts.length > 0 ? (
+        featuredProducts.map(product => (
+          <div className="col-md-4 mb-4" key={product._id}>
+            <div className="card h-100">
+              <img
+                src={product.imageUrl || 'https://via.placeholder.com/200'}
+                className="card-img-top"
+                alt={product.name}
+              />
+              <div className="card-body">
+                <h5 className="card-title">{product.name}</h5>
+                <p className="card-text">${product.price.toFixed(2)}</p>
+              </div>
+            </div>
+          </div>
+        ))
+      ) : (
+        <p className="text-center">No featured products available.</p>
+      )}
+    </div>
+  </div>
+</section>
+
+{/* Full Product List Section */}
+<section className="py-5 full-product-list">
+  <div className="container">
+    <h2 className="mb-4 text-center">Our Products</h2>
+    {/* Reuse the existing ProductList component */}
+    <ProductCatalog />
+  </div>
+</section>
+
+{/* Footer */}
+<footer className="bg-dark text-white text-center py-3 landing-footer">
+  <div className="container">
+    <small>&copy; 2025 Handmade Goods Marketplace. All rights reserved.</small>
+  </div>
+</footer>
+</div>
+);
 };
+
 
 export default LandingPage;

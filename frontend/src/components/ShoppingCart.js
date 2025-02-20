@@ -48,7 +48,8 @@ const updateQuantity = async (id, newQuantity) => {
       const token = localStorage.getItem('token');
       const config = { headers: { Authorization: `Bearer ${token}` } };
       const response = await axios.put(`http://localhost:5000/api/cart/${id}`, { quantity: newQuantity }, config);
-      setCartItems(cartItems.map(item => item._id === id ? response.data : item));
+    //   setCartItems(prevItems => prevItems.map(item => item._id === id ? response.data : item));
+      fetchCart();
     } catch (err) {
       console.error(err);
       alert('Failed to update quantity.');
