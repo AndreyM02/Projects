@@ -1,5 +1,5 @@
 /* frontend/src/components/Login.css */
-.login-wrapper {
+/* .login-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,7 +59,7 @@
     width: 100%;
     padding: 0.75rem;
     border: none;
-    background: #15bbd9bb;
+    background: #000000bb;
     color: #fff;
     border-radius: 4px;
     font-size: 1rem;
@@ -81,7 +81,7 @@
   }
   
   .login-footer a {
-    color: #19e8d6;
+    color: #000606;
     text-decoration: none;
     
     font-weight: bold;
@@ -89,4 +89,60 @@
   
   .login-footer a:hover {
     text-decoration: underline;
+  } */
+
+
+  .login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f0f2f5;
+  }
+  
+  .login-card {
+    width: 100%;
+    max-width: 400px;
+    border: none; /* Remove default border since we're using shadow */
+  }
+  
+  .login-card h2 {
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  .input-group {
+    text-align: left;
+  }
+  
+  /* Override the Bootstrap button styling for our login button */
+  .login-btn {
+    background: #000 !important;
+    border: none !important;
+    color: #fff !important;
+    transition: background 0.3s ease;
+  }
+  
+  .login-btn:hover {
+    background: #000000a0 !important;
+  }
+  
+  .login-footer a {
+    color: #000606;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .login-footer a:hover {
+    text-decoration: underline;
+  }
+
+
+  .form-control.custom-input {
+    border-radius: 10px;   /* More rounded corners */
+    padding: 10px;         /* Increase inner spacing */
+    font-size: 16px;       /* Increase font size */
+    margin-bottom: 1rem;   /* Space between inputs */
+    /* Optionally, adjust width if needed */
+    width: 100%;
   }

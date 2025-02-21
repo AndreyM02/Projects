@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import './Login.css';
 
 const LoginForm = ({
@@ -13,45 +14,42 @@ const LoginForm = ({
 }) => {
   return (
     <div className="login-wrapper">
-      <div className="login-card">
-        <h2>Welcome Back</h2>
-        <p>Please login to your account</p>
-        {error && <div className="error-message">{error}</div>}
+    <div className="card login-card shadow">
+      <div className="card-body">
+        <h2 className="card-title text-center mb-4">Login</h2>
+        {error && <div className="alert alert-danger">{error}</div>}
         <form onSubmit={onSubmit}>
-          <div className="input-group">
-            <label htmlFor="email">Email</label>
-            <input 
-              id="email"
+          <div className="mb-3 input-group">
+            <label className="form-label">Email:</label>
+            <input
               type="email"
-              placeholder="Enter your email"
+              className="form-control custom-input"
               value={email}
               onChange={onEmailChange}
               required
             />
           </div>
-          <div className="input-group">
-            <label htmlFor="password">Password</label>
-            <input 
-              id="password"
+          <div className="mb-3 input-group">
+            <label className="form-label">Password:</label>
+            <input
               type="password"
-              placeholder="Enter your password"
+              className="form-control custom-input"
               value={password}
               onChange={onPasswordChange}
               required
             />
           </div>
-          <button type="submit" disabled={isLoading}>
+          <button type="submit" className="btn login-btn w-100" disabled={isLoading}>
             {isLoading ? 'Logging in...' : 'Login'}
           </button>
         </form>
-        <div className="login-footer">
-          <p>
-            Don't have an account? <a href="/register">Register</a>
-          </p>
+        <div className="login-footer text-center mt-3">
+          <Link to="/register">Don't have an account? Register</Link>
         </div>
       </div>
     </div>
-  );
+  </div>
+);
 };
 
 LoginForm.propTypes = {

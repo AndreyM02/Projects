@@ -2,7 +2,7 @@
 import React from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-// import './ProductCatalogItem.css'; // optional custom styling
+ import './ProductCatalogItem.css'; // optional custom styling
 
 const ProductCatalogItem = ({ product }) => {
 //   const navigate = useNavigate();
@@ -31,7 +31,7 @@ const ProductCatalogItem = ({ product }) => {
         <p className="card-text">${product.price.toFixed(2)}</p>
       </div>
       <div className="card-footer">
-        <button className="btn btn-primary w-100" onClick={handleAddToCart}>Add to Cart</button>
+        <button className="btn btn-dark w-100" onClick={handleAddToCart}>Add to Cart</button>
       </div>
     </div>
   );

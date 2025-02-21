@@ -62,13 +62,16 @@ const adminRoutes = require('./routes/adminRoutes');
 
 const cartRoutes = require('./routes/cartRoutes');
 
+const publicProductRoutes = require('./routes/publicProductRoutes');
+
 app.use('/api/cart', cartRoutes);
 
 // Mount Routes
 app.use('/api/products', productRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/admin', adminRoutes);
-app.use('/api/cart', cartRoutes);    
+app.use('/api/cart', cartRoutes);
+app.use('/api/public/products', publicProductRoutes);    
 
 // Root Endpoint
 // A simple test route to confirm API is running

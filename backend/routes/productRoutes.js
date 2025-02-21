@@ -46,7 +46,7 @@ router.get('/', authMiddleware, async (req, res) => {
       // If the user is a seller, show only their products; 
       // if admin, show all; if buyer, perhaps show all available products.
       let query = {};
-      if (req.user.role === 'seller') {
+      if (!req.query.all && req.user.role === 'seller') {
         query = { seller: req.user.userId };
       }
     //   const products = await Product.find(query).lean();

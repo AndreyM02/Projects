@@ -50,6 +50,9 @@ const ProductList = () => {
   //   setProducts(prevProducts => [...prevProducts, newProduct]);
   // };
 
+    // Only allow modification (e.g., delete) if user is a seller or admin
+  const canModify = userInfo && (userInfo.role === 'seller' || userInfo.role === 'admin');
+
   // Callback to delete a product
   const handleDeleteProduct = (id) => {
     setProducts(prevProducts => prevProducts.filter(product => product._id !== id));
@@ -64,68 +67,33 @@ const ProductList = () => {
   };
 
   return (
-//     <div className="product-management-container">
-//       <h2>Product Management</h2>
-
-//       {userInfo && (
-//         <p>
-//           Profile <strong>{userInfo.email}</strong>
-//         </p>
-//       )}
-      
-//       {/* ProductForm is used to add a new product */}
-//       {/* <ProductForm onAdd={handleAddProduct} /> */}
-
-//       {/* Display the list of products */}
-//       {products.length > 0 ? (
-//         <div className="scrollable-list">
-//         <div className="product-list">
-//           {products.map(product => (
-//             <Product 
-//               key={product._id} 
-//               product={product} 
-//               onDelete={handleDeleteProduct} 
-//             />
-//           ))}
-//         </div>
-//       </div>
-//       ) : (
-//         <p>No products available.</p>
-//       )}
-//       <div className="logout-button">
-//             <button onClick={handleLogout}>Logout</button>
-//         </div>
-//     </div>
-//   );
-// };
-
 
 <div className="product-management-container container py-4">
-<div className="d-flex justify-content-between align-items-center mb-3">
-  <h2>Product Management</h2>
-  <button className="btn btn-secondary" onClick={handleLogout}>Logout</button>
-</div>
-{userInfo && (
-  <p className="text-center">Profile: <strong>{userInfo.email}</strong></p>
-)}
-{products.length > 0 ? (
-  <div className="scrollable-list">
-    <div className="row">
-      {products.map(product => (
-        <div className="col-md-4 mb-4" key={product._id}>
-          <Product 
-            product={product} 
-            onDelete={handleDeleteProduct} 
-          />
+      <div className="d-flex justify-content-between align-items-center mb-3">
+        <h2>Product Management</h2>
+        <button className="btn btn-secondary" onClick={handleLogout}>Logout</button>
+      </div>
+      {userInfo && (
+        <p className="text-center">Profile: <strong>{userInfo.email}</strong></p>
+      )}
+      {products.length > 0 ? (
+        <div className="scrollable-list">
+          <div className="row">
+            {products.map(product => (
+              <div className="col-md-4 mb-4" key={product._id}>
+                <Product 
+                  product={product} 
+                  onDelete={canModify ? handleDeleteProduct : null} 
+                />
+              </div>
+            ))}
+          </div>
         </div>
-      ))}
+      ) : (
+        <p className="text-center">No products available.</p>
+      )}
     </div>
-  </div>
-) : (
-  <p className="text-center">No products available.</p>
-)}
-</div>
-);
+  );
 };
 
 export default ProductList;
