@@ -1,4 +1,5 @@
-/* frontend/src/components/ProductCatalog.css */
-.product-catalog-container {
-    background: #f8f9fa;
-  }
+.card-img-top {
+  height: 200px;       /* Fixed height */
+  width: 100%;         /* Full width of the card */
+  object-fit: cover;   /* Ensures the image covers the area, cropping if necessary */
+}

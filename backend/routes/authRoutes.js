@@ -140,4 +140,21 @@ router.put('/change-password', authMiddleware, async (req, res) => {
 });
 
 
+router.put('/profile', authMiddleware, async (req, res) => {
+  const { name, phone, address } = req.body;
+  const userId = req.user.userId; 
+  const updatedUser = await User.findByIdAndUpdate(
+    userId,
+    { name, phone, address },
+    { new: true, runValidators: true }
+  ).select('-password');
+  
+  if (!updatedUser) {
+    return res.status(404).json({ message: 'User not found' });
+  }
+  
+  res.json({ message: 'Profile updated successfully', user: updatedUser });
+});
+
+
 module.exports = router;

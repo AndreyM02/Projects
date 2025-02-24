@@ -1,0 +1,13 @@
+/* frontend/src/components/Orders.css */
+
+.orders-container {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .order-card {
+    margin-bottom: 1rem;
+  }
+  

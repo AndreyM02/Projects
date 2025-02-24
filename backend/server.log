@@ -69,3 +69,75 @@
 {"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-17T22:17:29.676Z"}
 {"level":"info","message":"Server running on port 5000","timestamp":"2025-02-17T22:43:14.084Z"}
 {"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-17T22:43:15.001Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-18T18:59:31.103Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-18T18:59:32.011Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-18T23:29:49.237Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-18T23:29:50.250Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-19T05:48:02.886Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-19T05:48:03.848Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-19T05:48:30.257Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-19T05:48:31.143Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-19T05:49:47.994Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-19T05:49:48.952Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-19T06:02:26.244Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-19T06:02:30.025Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-19T06:52:10.200Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-19T06:52:11.630Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-19T06:58:50.875Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-19T06:58:51.819Z"}
+{"level":"error","message":"Unhandled Error: product is not defined","timestamp":"2025-02-19T06:59:57.737Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-19T07:01:01.077Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-19T07:01:02.053Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-19T07:02:12.811Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-19T07:02:13.745Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-19T07:05:21.256Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-19T07:05:22.252Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-19T07:34:50.808Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-19T07:34:51.771Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-19T17:48:31.882Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-19T17:48:32.852Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-19T18:15:25.696Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-19T18:15:28.544Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-19T18:33:17.793Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-19T18:33:19.676Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-19T20:16:02.563Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-19T20:16:03.915Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-20T05:16:29.043Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-20T05:16:29.952Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-20T22:19:40.344Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-20T22:19:41.426Z"}
+{"level":"error","message":"Unhandled Error: Cast to ObjectId failed for value \"public\" (type string) at path \"_id\" for model \"Product\"","timestamp":"2025-02-21T00:51:41.817Z"}
+{"level":"error","message":"Unhandled Error: Cast to ObjectId failed for value \"public\" (type string) at path \"_id\" for model \"Product\"","timestamp":"2025-02-21T00:51:41.819Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-21T00:53:09.227Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-21T00:53:10.158Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-21T01:01:07.043Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-21T01:01:07.983Z"}
+{"level":"error","message":"Unhandled Error: Cast to ObjectId failed for value \"public\" (type string) at path \"_id\" for model \"Product\"","timestamp":"2025-02-21T01:06:07.808Z"}
+{"level":"error","message":"Unhandled Error: Cast to ObjectId failed for value \"public\" (type string) at path \"_id\" for model \"Product\"","timestamp":"2025-02-21T01:06:11.753Z"}
+{"level":"error","message":"Unhandled Error: Cast to ObjectId failed for value \"public\" (type string) at path \"_id\" for model \"Product\"","timestamp":"2025-02-21T01:06:11.756Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-21T01:06:19.142Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-21T01:06:20.050Z"}
+{"level":"error","message":"Unhandled Error: Cast to ObjectId failed for value \"public\" (type string) at path \"_id\" for model \"Product\"","timestamp":"2025-02-21T01:06:31.001Z"}
+{"level":"error","message":"Unhandled Error: Cast to ObjectId failed for value \"public\" (type string) at path \"_id\" for model \"Product\"","timestamp":"2025-02-21T01:06:31.004Z"}
+{"level":"error","message":"Unhandled Error: Cast to ObjectId failed for value \"public\" (type string) at path \"_id\" for model \"Product\"","timestamp":"2025-02-21T01:06:33.799Z"}
+{"level":"error","message":"Unhandled Error: Cast to ObjectId failed for value \"public\" (type string) at path \"_id\" for model \"Product\"","timestamp":"2025-02-21T01:06:33.802Z"}
+{"level":"error","message":"Unhandled Error: Cast to ObjectId failed for value \"public\" (type string) at path \"_id\" for model \"Product\"","timestamp":"2025-02-21T01:06:34.482Z"}
+{"level":"error","message":"Unhandled Error: Cast to ObjectId failed for value \"public\" (type string) at path \"_id\" for model \"Product\"","timestamp":"2025-02-21T01:06:34.485Z"}
+{"level":"error","message":"Unhandled Error: Cast to ObjectId failed for value \"public\" (type string) at path \"_id\" for model \"Product\"","timestamp":"2025-02-21T01:06:35.029Z"}
+{"level":"error","message":"Unhandled Error: Cast to ObjectId failed for value \"public\" (type string) at path \"_id\" for model \"Product\"","timestamp":"2025-02-21T01:06:35.033Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-21T01:16:53.509Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-21T01:16:54.436Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-21T18:53:17.727Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-21T18:53:18.718Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-22T05:03:25.341Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-22T05:03:26.250Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-22T23:33:36.865Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-22T23:33:37.853Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-24T18:28:39.067Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-24T18:28:40.025Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-24T18:41:47.561Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-24T18:41:48.459Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-24T19:03:13.274Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-24T19:03:14.231Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-24T23:35:39.079Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-24T23:35:40.243Z"}

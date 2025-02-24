@@ -59,8 +59,14 @@ return (
   <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
     <div className="container">
       <Link className="navbar-brand" to="/">Handmade Marketplace</Link>
-      <div className="ms-auto">
-        <Link className="btn btn-outline-light me-2" to="/login">Login</Link>
+      <div className="navbar-right ms-auto">
+        {userInfo ? (
+          <Link className="btn btn-outline-light me-2" to="/profile">
+            {userInfo.name ? userInfo.name : userInfo.email}
+          </Link>
+        ) : (
+          <Link className="btn btn-outline-light me-2" to="/login">Login</Link>
+        )}
         <Link className="btn btn-outline-light" to="/cart">
           <i className="bi bi-cart-fill"></i> Cart
         </Link>
@@ -72,7 +78,8 @@ return (
   <header 
     className="landing-header" 
     style={{ backgroundImage: "url('https://via.placeholder.com/1200x400')" }}
-  >  <div className="hero-overlay"></div>
+  >
+    <div className="hero-overlay"></div>
     <div className="hero-content container text-center text-white" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.7)' }}>
       <h1 className="display-4">Welcome to Our Handmade Goods Marketplace</h1>
       <p className="lead">Discover unique, handcrafted items made with love.</p>
@@ -85,21 +92,16 @@ return (
   <section className="py-5 featured-products">
     <div className="container">
       <h2 className="mb-4 text-center">Featured Products</h2>
-      <div className="row">
+      <div className="product-grid">
         {featuredProducts.length > 0 ? (
           featuredProducts.map(product => (
-            <div className="col-md-4 mb-4" key={product._id}>
-              <div className="card h-100">
-                <img
-                  src={product.imageUrl || 'https://via.placeholder.com/200'}
-                  className="card-img-top"
-                  alt={product.name}
-                />
-                <div className="card-body">
-                  <h5 className="card-title">{product.name}</h5>
-                  <p className="card-text">${product.price.toFixed(2)}</p>
-                </div>
-              </div>
+            <div className="product-card" key={product._id}>
+              <img 
+                src={product.imageUrl || 'https://via.placeholder.com/200'} 
+                alt={product.name} 
+              />
+              <h5>{product.name}</h5>
+              <p>${product.price.toFixed(2)}</p>
             </div>
           ))
         ) : (
@@ -112,8 +114,6 @@ return (
   {/* Full Product List Section */}
   <section className="py-5 full-product-list" id="full-product-list">
     <div className="container">
-      {/* <h2 className="mb-4 text-center">Our Products</h2> */}
-      {/* Reuse the buyer-friendly ProductCatalog component */}
       <ProductCatalog />
     </div>
   </section>
@@ -127,4 +127,5 @@ return (
 </div>
 );
 };
+
 export default LandingPage;

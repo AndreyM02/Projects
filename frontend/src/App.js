@@ -14,6 +14,8 @@ import AdminDashboard from './components/AdminDashboard';
 import UserManagement from './components/UserManagement';
 import LandingPage from './components/LandingPage';
 import ShoppingCart from './components/ShoppingCart';
+import Checkout from './components/Checkout';
+import Orders from './components/Orders';
 
 
 
@@ -31,6 +33,8 @@ function App() {
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/admin/users" element={<UserManagement />} />
         <Route path="/product-assignment" element={<ProductAssignment />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/orders" element={<Orders />} />
         
         {/* Add more routes (e.g., protected routes) as needed */}
       </Routes>

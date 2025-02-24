@@ -1,13 +1,16 @@
 // frontend/src/components/ShoppingCart.js
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useNavigate } from 'react';
 import axios from 'axios';
 import './ShoppingCart.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import { Link } from 'react-router-dom';
 
 
 const ShoppingCart = () => {
   const [cartItems, setCartItems] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  //const navigate = useNavigate();
 
   const fetchCart = async () => {
     setLoading(true);
@@ -118,6 +121,11 @@ const updateQuantity = async (id, newQuantity) => {
           Total: $
           {cartItems.reduce((acc, item) => acc + item.product.price * item.quantity, 0).toFixed(2)}
         </h3>
+      )}
+
+      {/* Optionally, add a checkout button */}
+      {cartItems.length > 0 && (
+       <Link className="btn btn-outline-dark me-2" to="/checkout">Checkout</Link>
       )}
     </div>
   );
