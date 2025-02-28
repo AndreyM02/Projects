@@ -125,7 +125,7 @@ const updateQuantity = async (id, newQuantity) => {
 
       {/* Optionally, add a checkout button */}
       {cartItems.length > 0 && (
-       <Link className="btn btn-outline-dark me-2" to="/checkout">Checkout</Link>
+       <Link className="btn btn-outline-dark me-2" to="/checkout-page">Checkout</Link>
       )}
     </div>
   );

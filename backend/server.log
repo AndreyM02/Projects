@@ -141,3 +141,40 @@
 {"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-24T19:03:14.231Z"}
 {"level":"info","message":"Server running on port 5000","timestamp":"2025-02-24T23:35:39.079Z"}
 {"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-24T23:35:40.243Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-25T18:02:38.818Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-25T18:02:39.807Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-25T18:52:36.414Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-25T18:52:37.449Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-25T20:16:12.783Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-25T20:16:13.804Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-25T20:26:46.735Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-25T20:26:48.106Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-25T20:49:17.720Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-25T20:49:18.732Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-25T20:51:49.597Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-25T20:51:50.684Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-26T17:16:28.365Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-26T17:16:29.421Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-26T17:31:17.282Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-26T17:31:18.202Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-26T17:58:06.881Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-26T17:58:07.825Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-26T19:03:26.740Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-26T19:03:27.741Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-26T19:24:50.371Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-26T19:24:51.296Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-27T18:23:24.252Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-27T18:23:25.141Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-27T19:20:03.956Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-27T19:20:04.892Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-27T19:43:12.291Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-27T19:43:13.197Z"}
+{"level":"error","message":"Unhandled Error: amount is not defined","timestamp":"2025-02-27T19:44:06.566Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-27T19:58:50.679Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-27T19:58:51.625Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-28T05:04:05.305Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-28T05:04:06.240Z"}
+{"level":"error","message":"Unhandled Error: Order validation failed: shippingAddress.country: Path `shippingAddress.country` is required., shippingAddress.postalCode: Path `shippingAddress.postalCode` is required., shippingAddress.city: Path `shippingAddress.city` is required., shippingAddress.address: Path `shippingAddress.address` is required., shippingAddress.name: Path `shippingAddress.name` is required.","timestamp":"2025-02-28T05:36:12.043Z"}
+{"level":"error","message":"Unhandled Error: Order validation failed: shippingAddress.country: Path `shippingAddress.country` is required., shippingAddress.postalCode: Path `shippingAddress.postalCode` is required., shippingAddress.city: Path `shippingAddress.city` is required., shippingAddress.address: Path `shippingAddress.address` is required., shippingAddress.name: Path `shippingAddress.name` is required.","timestamp":"2025-02-28T05:36:12.047Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-28T06:01:18.952Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-28T06:01:20.316Z"}

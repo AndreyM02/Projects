@@ -157,4 +157,15 @@ router.put('/profile', authMiddleware, async (req, res) => {
 });
 
 
+router.get('/profile', authMiddleware, async (req, res) => {
+  const userId = req.user.userId;
+  const user = await User.findById(userId).select('-password');
+  if (!user) {
+    return res.status(404).json({ message: 'User not found' });
+  } 
+  res.json(user);
+}
+);
+
+
 module.exports = router;

@@ -66,8 +66,10 @@ const publicProductRoutes = require('./routes/publicProductRoutes');
 
 const orderRoutes = require('./routes/orderRoutes');
 
+const stripeRoutes = require('./routes/stripeRoutes');
 
-app.use('/api/cart', cartRoutes);
+
+
 
 // Mount Routes
 app.use('/api/products', productRoutes);
@@ -75,7 +77,8 @@ app.use('/api/auth', authRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/cart', cartRoutes);
 app.use('/api/public/products', publicProductRoutes);
-app.use('/api/orders', orderRoutes);    
+app.use('/api/orders', orderRoutes);
+app.use('/api/stripe', stripeRoutes);    
 
 // Root Endpoint
 // A simple test route to confirm API is running
