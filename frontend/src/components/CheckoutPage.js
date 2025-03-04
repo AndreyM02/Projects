@@ -38,13 +38,13 @@ import './Checkout.css';
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
 
 const CheckoutPage = () => {
-  const [shippingAddress, setShippingAddress] = useState({
-    name: '',
-    address: '',
-    city: '',
-    postalCode: '',
-    country: ''
-  });
+  // const [shippingAddress, setShippingAddress] = useState({
+  //   name: '',
+  //   address: '',
+  //   city: '',
+  //   postalCode: '',
+  //   country: ''
+  // });
   const [total, setTotal] = useState(0);
   const [error, setError] = useState('');
   const [isProcessing, setIsProcessing] = useState(false);
@@ -71,13 +71,13 @@ const CheckoutPage = () => {
     fetchCart();
   }, []);
 
-  const handleShippingChange = (e) => {
-    setShippingAddress({ ...shippingAddress, [e.target.name]: e.target.value });
-  };
+  // const handleShippingChange = (e) => {
+  //   setShippingAddress({ ...shippingAddress, [e.target.name]: e.target.value });
+  // };
 
   return (
     <Elements stripe={stripePromise}>
-      <div className="checkout-container container my-5">
+      {/* <div className="checkout-container container my-5">
         <h2 className="mb-4">Checkout</h2>
         {error && <div className="alert alert-danger">{error}</div>}
         <form>
@@ -137,10 +137,12 @@ const CheckoutPage = () => {
               required 
             />
           </div>
-        </form>
+        </form> */}
         {/* CheckoutButton receives shippingAddress and total as props */}
-        <CheckoutButton shippingAddress={shippingAddress} amount={total} />
-      </div>
+        {/* <CheckoutButton shippingAddress={shippingAddress} amount={total} /> */}
+        <CheckoutButton  amount={total} />
+       
+      {/* </div> */}
     </Elements>
   );
 };

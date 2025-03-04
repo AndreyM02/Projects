@@ -12,17 +12,17 @@ const SuccessPage = () => {
   useEffect(() => {
     const finalizeOrder = async () => {
       try {
-        const token = localStorage.getItem('token');
-        const config = { headers: { Authorization: `Bearer ${token}` } };
+        // const token = localStorage.getItem('token');
+        // const config = { headers: { Authorization: `Bearer ${token}` } };
         // Here, you could pass additional data if needed.
         // For now, we simply call the endpoint that creates the order.
-        const response = await axios.post('http://localhost:5000/api/orders', {
+        // const response = await axios.post('http://localhost:5000/api/orders', {
           // Optionally include shippingAddress if not already stored or associated with session.
-        }, config);
-        setMessage('Your order has been finalized successfully!');
+        // }, config);
+        // setMessage('Your order has been finalized successfully!');
         // Redirect to orders history after a delay.
         setTimeout(() => {
-          navigate('/orders');
+          navigate('/checkout');
         }, 3000);
       } catch (error) {
         console.error('Error finalizing order:', error);

@@ -103,6 +103,8 @@ router.post(
 // PUT (update) a product by ID
 router.put(
     '/:id',
+    authMiddleware,
+    roleMiddleware('seller', 'admin'), // Only sellers and admins can update products
     productValidationRules, // Validation rules
     asyncHandler(async (req, res) => {
         const errors = validationResult(req);
@@ -119,6 +121,8 @@ router.put(
 // DELETE a product by ID
 router.delete(
     '/:id',
+    authMiddleware,
+    roleMiddleware('seller', 'admin'), // Only sellers and admins can delete products
     asyncHandler(async (req, res) => {
         const product = await Product.findByIdAndDelete(req.params.id);
         if (!product) return res.status(404).json({ message: 'Product not found' });

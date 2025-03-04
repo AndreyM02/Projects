@@ -49,7 +49,7 @@ import React from 'react';
 import axios from 'axios';
 import { useStripe } from '@stripe/react-stripe-js';
 
-const CheckoutButton = ({ shippingAddress, amount }) => {
+const CheckoutButton = ({ amount }) => {
   const stripe = useStripe();
 
   const handleCheckout = async () => {
@@ -58,13 +58,15 @@ const CheckoutButton = ({ shippingAddress, amount }) => {
         console.error('Stripe has not loaded yet.');
         return;
       }
-      console.log(shippingAddress);
-      console.log(amount);
+      // console.log(shippingAddress);
+      // console.log(amount);
+      const token = localStorage.getItem('token');
+      const config = { headers: { Authorization: `Bearer ${token}` } };
       // Call the backend to create a Checkout Session with shipping info and total (converted to cents)
       const response = await axios.post('http://localhost:5000/api/stripe/create-checkout-session', {
-        shippingAddress,
+        // shippingAddress,
         amount: amount * 100, // converting dollars to cents
-      });
+      }, config);
       const sessionId = response.data.id;
       
       // Redirect to Stripe Checkout using the session ID
@@ -78,7 +80,7 @@ const CheckoutButton = ({ shippingAddress, amount }) => {
   };
 
   return (
-    <button onClick={handleCheckout} className="btn btn-primary">
+    <button onClick={handleCheckout} className="btn btn-outline-dark">
       Checkout
     </button>
   );

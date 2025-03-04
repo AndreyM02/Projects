@@ -6,7 +6,8 @@ const asyncHandler = fn => (req, res, next) => Promise.resolve(fn(req, res, next
 
 router.post('/create-checkout-session', asyncHandler(async (req, res) => {
   // Destructure dynamic data from req.body
-  const { shippingAddress, amount } = req.body;
+  // const { shippingAddress, amount } = req.body;
+  const { amount } = req.body;
   
   if (!amount) {
     return res.status(400).json({ message: 'Amount is required' });

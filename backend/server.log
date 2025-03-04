@@ -178,3 +178,36 @@
 {"level":"error","message":"Unhandled Error: Order validation failed: shippingAddress.country: Path `shippingAddress.country` is required., shippingAddress.postalCode: Path `shippingAddress.postalCode` is required., shippingAddress.city: Path `shippingAddress.city` is required., shippingAddress.address: Path `shippingAddress.address` is required., shippingAddress.name: Path `shippingAddress.name` is required.","timestamp":"2025-02-28T05:36:12.047Z"}
 {"level":"info","message":"Server running on port 5000","timestamp":"2025-02-28T06:01:18.952Z"}
 {"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-28T06:01:20.316Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-28T19:25:03.124Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-28T19:25:04.379Z"}
+{"level":"error","message":"Unhandled Error: Order validation failed: shippingAddress.country: Path `shippingAddress.country` is required., shippingAddress.postalCode: Path `shippingAddress.postalCode` is required., shippingAddress.city: Path `shippingAddress.city` is required., shippingAddress.address: Path `shippingAddress.address` is required., shippingAddress.name: Path `shippingAddress.name` is required.","timestamp":"2025-02-28T19:32:57.590Z"}
+{"level":"error","message":"Unhandled Error: Order validation failed: shippingAddress.country: Path `shippingAddress.country` is required., shippingAddress.postalCode: Path `shippingAddress.postalCode` is required., shippingAddress.city: Path `shippingAddress.city` is required., shippingAddress.address: Path `shippingAddress.address` is required., shippingAddress.name: Path `shippingAddress.name` is required.","timestamp":"2025-02-28T19:32:57.594Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-28T20:52:17.995Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-28T20:52:18.949Z"}
+{"level":"error","message":"Unhandled Error: Cannot read properties of undefined (reading 'userId')","timestamp":"2025-02-28T20:52:57.987Z"}
+{"level":"error","message":"Unhandled Error: Cannot read properties of undefined (reading 'userId')","timestamp":"2025-02-28T20:53:01.762Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-28T20:59:42.433Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-28T20:59:43.374Z"}
+{"level":"error","message":"Unhandled Error: Cannot read properties of undefined (reading '_id')","timestamp":"2025-02-28T20:59:54.954Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-28T21:01:39.442Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-28T21:01:40.408Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-28T21:06:52.986Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-28T21:06:54.001Z"}
+{"level":"error","message":"Unhandled Error: Cannot read properties of undefined (reading 'userId')","timestamp":"2025-02-28T21:07:01.749Z"}
+{"level":"error","message":"Unhandled Error: Cannot read properties of undefined (reading 'userId')","timestamp":"2025-02-28T21:07:05.802Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-28T21:08:06.360Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-28T21:08:07.276Z"}
+{"level":"error","message":"Unhandled Error: You must specify either `product` or `product_data` when creating a price.","timestamp":"2025-02-28T21:10:13.631Z"}
+{"level":"error","message":"Unhandled Error: You must specify either `product` or `product_data` when creating a price.","timestamp":"2025-02-28T21:10:20.776Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-28T21:14:35.661Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-28T21:14:36.593Z"}
+{"level":"error","message":"Unhandled Error: Cannot read properties of undefined (reading '_id')","timestamp":"2025-02-28T21:14:45.127Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-02-28T21:15:07.545Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-02-28T21:15:08.439Z"}
+{"level":"error","message":"Unhandled Error: Cannot read properties of undefined (reading 'userId')","timestamp":"2025-02-28T21:15:11.179Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-03-03T18:50:57.963Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-03T18:51:01.554Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-03-04T18:11:25.136Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-04T18:11:26.079Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-03-04T19:15:48.913Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-04T19:15:49.880Z"}

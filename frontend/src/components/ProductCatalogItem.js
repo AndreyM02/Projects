@@ -29,6 +29,7 @@ const ProductCatalogItem = ({ product }) => {
       <div className="card-body">
         <h5 className="card-title">{product.name}</h5>
         <p className="card-text">${product.price.toFixed(2)}</p>
+        {/* <p className ="card-text">{product.description}</p> */}
       </div>
       <div className="card-footer">
         <button className="btn btn-dark w-100" onClick={handleAddToCart}>Add to Cart</button>

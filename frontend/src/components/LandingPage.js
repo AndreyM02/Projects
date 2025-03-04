@@ -58,7 +58,7 @@ return (
   {/* Navigation Bar */}
   <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
     <div className="container">
-      <Link className="navbar-brand" to="/">Handmade Marketplace</Link>
+      <Link className="navbar-brand" to="/">Menswear Marketplace</Link>
       <div className="navbar-right ms-auto">
         {userInfo ? (
           <Link className="btn btn-outline-light me-2" to="/profile">
@@ -77,25 +77,29 @@ return (
   {/* Hero Section */}
   <header 
     className="landing-header" 
-    style={{ backgroundImage: "url('https://via.placeholder.com/1200x400')" }}
+    style={{ backgroundImage: "url('/images/DALL·E 2025-03-03 14.55.36.jpg')" }}
   >
     <div className="hero-overlay"></div>
     <div className="hero-content container text-center text-white" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.7)' }}>
-      <h1 className="display-4">Welcome to Our Handmade Goods Marketplace</h1>
-      <p className="lead">Discover unique, handcrafted items made with love.</p>
+      <h1 className="display-4">Welcome to Our Men's wear Store</h1>
+      <p className="lead">Discover stylish, premium apparel designed for today's man.</p>
       {/* "Shop Now" button scrolls down to the product list section */}
       <a href="#full-product-list" className="btn btn-dark btn-lg mt-3">Shop Now</a>
     </div>
   </header>
 
   {/* Featured Products Section */}
-  <section className="py-5 featured-products">
+  {/* <section className="py-5 featured-products">
     <div className="container">
       <h2 className="mb-4 text-center">Featured Products</h2>
       <div className="product-grid">
+      
+
+        <div className = "row">
+
         {featuredProducts.length > 0 ? (
           featuredProducts.map(product => (
-            <div className="product-card" key={product._id}>
+            <div className="col-md-4 mb-4" key={product._id}>
               <img 
                 src={product.imageUrl || 'https://via.placeholder.com/200'} 
                 alt={product.name} 
@@ -107,9 +111,41 @@ return (
         ) : (
           <p className="text-center">No featured products available.</p>
         )}
+
+        </div>
+      
       </div>
     </div>
-  </section>
+  </section> */}
+
+
+{/* Featured Products Section */}
+<section className="py-5 featured-products">
+  <div className="container">
+    <h2 className="mb-4 text-center">Featured Products</h2>
+    <div className="featured-products-wrapper">
+      {featuredProducts.length > 0 ? (
+        featuredProducts.map(product => (
+          <div className="featured-product-card" key={product._id}>
+            <div className="card h-100">
+              <img 
+                src={product.imageUrl || 'https://via.placeholder.com/400x300'} 
+                className="card-img-top" 
+                alt={product.name} 
+              />
+              <div className="card-body">
+                <h5 className="card-title">{product.name}</h5>
+                <p className="card-text">${product.price.toFixed(2)}</p>
+              </div>
+            </div>
+          </div>
+        ))
+      ) : (
+        <p className="text-center">No featured products available.</p>
+      )}
+    </div>
+  </div>
+</section>
 
   {/* Full Product List Section */}
   <section className="py-5 full-product-list" id="full-product-list">
@@ -121,7 +157,7 @@ return (
   {/* Footer */}
   <footer className="bg-dark text-white text-center py-3 landing-footer">
     <div className="container">
-      <small>&copy; 2025 Handmade Goods Marketplace. All rights reserved.</small>
+      <small>&copy; 2025 Menswear Store. All rights reserved.</small>
     </div>
   </footer>
 </div>
