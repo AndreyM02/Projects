@@ -26,21 +26,18 @@ router.get('/', authMiddleware, asyncHandler(async (req, res) => {
 router.post('/', authMiddleware, asyncHandler(async (req, res) => {
   const { shippingAddress } = req.body;
 
-  // In a real app, you’d validate shippingAddress, payment info, etc.
-  // For now, assume shippingAddress is provided and valid
-
-  // For simplicity, assume the order items come from the user's cart.
-  // You might choose to have the frontend send the cart items, or fetch from the Cart collection.
-  const cartItems = await Cart.find({ user: req.user.userId }).populate('product', 'price');
+  // Fetch cart items (populating product details)
+  const cartItems = await Cart.find({ user: req.user.userId }).populate('product', 'price name');
   if (!cartItems.length) {
     return res.status(400).json({ message: 'Your cart is empty.' });
   }
 
-  // Build order items and calculate total
+  // Build order items with product details
   const orderItems = cartItems.map(item => ({
     product: item.product._id,
+    productName: item.product.name, // Store the product name at the time of order
     quantity: item.quantity,
-    price: item.product.price // use product price at time of order
+    price: item.product.price
   }));
 
   const totalPrice = orderItems.reduce((acc, item) => acc + (item.price * item.quantity), 0);

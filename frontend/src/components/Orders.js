@@ -50,13 +50,21 @@ const Orders = () => {
                 <strong>Ordered on:</strong> {new Date(order.createdAt).toLocaleString()}
               </p>
               <h6>Items:</h6>
-              <ul className="list-group list-group-flush">
+              {/* <ul className="list-group list-group-flush">
                 {order.items.map(item => (
                   <li key={item.product._id} className="list-group-item">
                     {item.quantity} x {item.product.name} — ${(item.price * item.quantity).toFixed(2)}
                   </li>
                 ))}
-              </ul>
+              </ul> */}
+
+<ul className="list-group list-group-flush">
+  {order.items.map((item, index) => (
+    <li key={item.product ? item.product._id : index} className="list-group-item">
+      {item.quantity} x {item.product ? item.product.name : 'Product Not Available'} — ${(item.price * item.quantity).toFixed(2)}
+    </li>
+  ))}
+</ul>
               <h6 className="mt-3">Shipping Address:</h6>
               <p className="card-text">
                 {order.shippingAddress.name}<br />

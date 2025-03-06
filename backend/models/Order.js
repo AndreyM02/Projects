@@ -7,12 +7,16 @@ const orderItemSchema = new mongoose.Schema({
     ref: 'Product',
     required: true
   },
+  productName: {  // New field to store the product name at the time of order
+    type: String,
+    required: true
+  },
   quantity: { 
     type: Number, 
     required: true, 
     default: 1 
   },
-  price: { // price at the time of ordering
+  price: { // Price at the time of ordering
     type: Number,
     required: true
   }

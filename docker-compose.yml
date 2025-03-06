@@ -1,0 +1,77 @@
+version: '3.8'
+services:
+  traefik:
+    image: traefik:v2.10
+    container_name: traefik
+    restart: always
+    command:
+      - "--api.insecure=true"            # Enable dashboard (insecure for demo; use proper auth in production)
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+      - "--certificatesresolvers.letsencrypt.acme.email=amelkozerov02@gmail.com"
+      - "--certificatesresolvers.letsencrypt.acme.storage=/letsencrypt/acme.json"
+      - "--certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=web"
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080"                      # Traefik dashboard
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "./acme.json:/letsencrypt/acme.json"
+      - "./traefik.yml:/traefik.yml:ro"
+  mongo:
+    image: mongo:5
+    container_name: mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: test
+    volumes:
+      - mongo-data:/data/db
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: backend
+    restart: always
+    ports:
+      - "5000:5000"
+    environment:
+      MONGO_URI: "${MONGO_URI}"
+      STRIPE_SECRET_KEY: "${STRIPE_SECRET_KEY}"
+      JWT_SECRET: "${JWT_SECRET}"
+      ALLOWED_ORIGINS: "${ALLOWED_ORIGINS}"
+    
+    labels:
+    - "traefik.enable=true"
+    - "traefik.http.routers.backend.rule=Host(`api.dev.yourdomain.com`)"
+    - "traefik.http.routers.backend.entrypoints=web,websecure"
+    - "traefik.http.routers.backend.tls.certresolver=letsencrypt"
+
+    depends_on:
+      - mongo
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend
+    restart: always
+    labels:
+    - "traefik.enable=true"
+    - "traefik.http.routers.frontend.rule=Host(`dev.yourdomain.com`)"
+    - "traefik.http.routers.frontend.entrypoints=web,websecure"
+    - "traefik.http.routers.frontend.tls.certresolver=letsencrypt"
+    ports:
+      - "3000:80"
+    volumes:
+     - ./default.conf:/etc/nginx/conf.d/default.conf
+    environment:
+      REACT_APP_STRIPE_PUBLISHABLE_KEY: "${REACT_APP_STRIPE_PUBLISHABLE_KEY}"
+
+volumes:
+  mongo-data:

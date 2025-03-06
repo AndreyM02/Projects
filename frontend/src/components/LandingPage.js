@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
 import ProductCatalog from './ProductCatalog';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 //import { useNavigate } from 'react-router-dom';
 
