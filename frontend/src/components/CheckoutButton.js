@@ -62,6 +62,7 @@ const CheckoutButton = ({ amount }) => {
       // console.log(amount);
       const token = localStorage.getItem('token');
       const config = { headers: { Authorization: `Bearer ${token}` } };
+      const apiUrl = process.env.REACT_APP_API_URL;
       // Call the backend to create a Checkout Session with shipping info and total (converted to cents)
       const response = await axios.post(`${apiUrl}/api/stripe/create-checkout-session`, {
         // shippingAddress,

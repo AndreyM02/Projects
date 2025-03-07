@@ -88,6 +88,7 @@ const ProductList = () => {
     try {
       const token = localStorage.getItem('token');
       const config = { headers: { Authorization: `Bearer ${token}` } };
+      const apiUrl = process.env.REACT_APP_API_URL;
       const response = await axios.get(`${apiUrl}/api/products`, config);
       setProducts(response.data.products || []);
     } catch (err) {
@@ -102,6 +103,7 @@ const ProductList = () => {
 
   const handleDelete = async (id) => {
     try {
+      const apiUrl = process.env.REACT_APP_API_URL;
       await axios.delete(`${apiUrl}/api/products/${id}`);
       setProducts(products.filter(product => product._id !== id));
     } catch (err) {
