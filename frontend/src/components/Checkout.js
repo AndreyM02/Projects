@@ -23,7 +23,8 @@ const Checkout = () => {
       try {
         const token = localStorage.getItem('token');
         const config = { headers: { Authorization: `Bearer ${token}` } };
-        const response = await axios.get('http://localhost:5000/api/cart', config);
+        const apiUrl = process.env.REACT_APP_API_URL;
+        const response = await axios.get(`${apiUrl}/api/cart`, config);
         setCartItems(response.data);
         const computedTotal = response.data.reduce((acc, item) => acc + (item.product.price * item.quantity), 0);
         setTotal(computedTotal);
@@ -46,7 +47,8 @@ const Checkout = () => {
     try {
       const token = localStorage.getItem('token');
       const config = { headers: { Authorization: `Bearer ${token}` } };
-      const response = await axios.post('http://localhost:5000/api/orders', { shippingAddress }, config);
+      const apiUrl = process.env.REACT_APP_API_URL;
+      const response = await axios.post(`${apiUrl}/api/orders`, { shippingAddress }, config);
       alert('Order placed successfully!');
       navigate('/orders'); // Navigate to order confirmation or history page
     } catch (err) {

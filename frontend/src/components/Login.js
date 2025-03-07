@@ -21,7 +21,8 @@ const Login = () => {
     setIsLoading(true);
     try {
       // Replace with your backend's login endpoint
-      const response = await axios.post('http://localhost:5000/api/auth/login', { email, password });
+      const apiUrl = process.env.REACT_APP_API_URL;
+      const response = await axios.post(`${apiUrl}/api/auth/login`, { email, password });
       localStorage.setItem('token', response.data.token);
       navigate('/');
     } catch (err) {

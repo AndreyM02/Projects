@@ -142,57 +142,19 @@ const Profile = () => {
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
+
   // On mount, decode token and optionally fetch additional profile details from backend
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
       try {
-        // const decoded = jwtDecode(token);
-        // setUserInfo(decoded);
-        // setName(decoded.name || '');
-        // You might also set other fields from the token if available
+       
       } catch (err) {
         console.error('Failed to decode token:', err);
       }
     }
     
-    // // Optionally, fetch profile details from a backend endpoint
-    // const fetchProfile = async () => {
-    //   try {
-    //     const token = localStorage.getItem('token');
-    //     const config = { headers: { Authorization: `Bearer ${token}` } };
-    //     const response = await axios.get('http://localhost:5000/api/auth/profile', config);
-    //     // Assuming response.data returns { name, phone, address }
-    //     setName(response.data.name || '');
-    //     setPhone(response.data.phone || '');
-    //     setAddress(response.data.address || '');
-    //   } catch (err) {
-    //     console.error('Error fetching profile:', err);
-    //   }
-    // };
-
-    // fetchProfile();
   }, []);
-
-  // // Handler to update general profile info
-  // const handleProfileUpdate = async (e) => {
-  //   e.preventDefault();
-  //   setError('');
-  //   setMessage('');
-  //   setIsLoading(true);
-  //   try {
-  //     const token = localStorage.getItem('token');
-  //     const config = { headers: { Authorization: `Bearer ${token}` } };
-  //     const payload = { name, phone, address };
-  //     const response = await axios.put('http://localhost:5000/api/auth/profile', payload, config);
-  //     setMessage(response.data.message || 'Profile updated successfully.');
-  //   } catch (err) {
-  //     console.error('Error updating profile:', err);
-  //     setError(err.response?.data?.message || 'Failed to update profile.');
-  //   } finally {
-  //     setIsLoading(false);
-  //   }
-  // };
 
   // Handler to change password
   const handleChangePassword = async (e) => {
@@ -208,8 +170,9 @@ const Profile = () => {
     try {
       const token = localStorage.getItem('token');
       const config = { headers: { Authorization: `Bearer ${token}` } };
+      const apiUrl = process.env.REACT_APP_API_URL;
       const response = await axios.put(
-        'http://localhost:5000/api/auth/change-password',
+      `${apiUrl}/api/auth/change-password`,
         { currentPassword, newPassword },
         config
       );
@@ -232,46 +195,6 @@ const Profile = () => {
       
       {message && <div className="alert alert-success">{message}</div>}
       {error && <div className="alert alert-danger">{error}</div>}
-{/* 
-     
-      <form onSubmit={handleProfileUpdate} className="mb-5">
-        <h4>Profile Information</h4>
-        <div className="mb-3">
-          <label className="form-label">Email (read-only)</label>
-          <input type="email" className="form-control" value={userInfo ? userInfo.email : ''} readOnly />
-        </div>
-        <div className="mb-3">
-          <label className="form-label">Name</label>
-          <input 
-            type="text" 
-            className="form-control" 
-            value={name} 
-            onChange={(e) => setName(e.target.value)} 
-            required 
-          />
-        </div>
-        <div className="mb-3">
-          <label className="form-label">Phone</label>
-          <input 
-            type="text" 
-            className="form-control" 
-            value={phone} 
-            onChange={(e) => setPhone(e.target.value)} 
-          />
-        </div>
-        <div className="mb-3">
-          <label className="form-label">Address</label>
-          <textarea 
-            className="form-control" 
-            value={address} 
-            onChange={(e) => setAddress(e.target.value)} 
-            rows="3" 
-          />
-        </div>
-        <button type="submit" className="btn btn-primary w-100" disabled={isLoading}>
-          {isLoading ? 'Updating...' : 'Update Profile'}
-        </button>
-      </form> */}
 
       {/* Change Password Section */}
       <form onSubmit={handleChangePassword}>

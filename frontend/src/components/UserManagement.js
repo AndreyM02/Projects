@@ -10,7 +10,8 @@ const UserManagement = () => {
     try {
       const token = localStorage.getItem('token');
       const config = { headers: { Authorization: `Bearer ${token}` } };
-      const response = await axios.get('http://localhost:5000/api/admin/users', config);
+      const apiUrl = process.env.REACT_APP_API_URL;
+      const response = await axios.get(`${apiUrl}/api/admin/users`, config);
       setUsers(response.data);
     } catch (err) {
       console.error(err);
@@ -31,7 +32,8 @@ const UserManagement = () => {
       const token = localStorage.getItem('token');
       const config = { headers: { Authorization: `Bearer ${token}` } };
       const role = selectedRole[id];
-      await axios.put(`http://localhost:5000/api/admin/users/${id}/role`, { role }, config);
+      const apiUrl = process.env.REACT_APP_API_URL;
+      await axios.put(`${apiUrl}/api/admin/users/${id}/role`, { role }, config);
       alert('Role updated successfully.');
       fetchUsers();
     } catch (err) {
@@ -45,7 +47,8 @@ const UserManagement = () => {
     try {
       const token = localStorage.getItem('token');
       const config = { headers: { Authorization: `Bearer ${token}` } };
-      await axios.delete(`http://localhost:5000/api/admin/users/${id}`, config);
+      const apiUrl = process.env.REACT_APP_API_URL;
+      await axios.delete(`${apiUrl}/api/admin/users/${id}`, config);
       alert('User deleted successfully.');
       fetchUsers();
     } catch (err) {

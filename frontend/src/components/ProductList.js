@@ -21,7 +21,8 @@ const ProductUpdateForm = ({ product, onUpdate, onCancel }) => {
     try {
       const token = localStorage.getItem('token');
       const config = { headers: { Authorization: `Bearer ${token}` } };
-      const response = await axios.put(`http://localhost:5000/api/products/${product._id}`, formData, config);
+      const apiUrl = process.env.REACT_APP_API_URL;
+      const response = await axios.put(`${apiUrl}/api/products/${product._id}`, formData, config);
       onUpdate(response.data);
     } catch (error) {
       console.error('Failed to update product', error);
@@ -87,7 +88,7 @@ const ProductList = () => {
     try {
       const token = localStorage.getItem('token');
       const config = { headers: { Authorization: `Bearer ${token}` } };
-      const response = await axios.get('http://localhost:5000/api/products', config);
+      const response = await axios.get(`${apiUrl}/api/products`, config);
       setProducts(response.data.products || []);
     } catch (err) {
       console.error('Error fetching products:', err);
@@ -101,7 +102,7 @@ const ProductList = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/products/${id}`);
+      await axios.delete(`${apiUrl}/api/products/${id}`);
       setProducts(products.filter(product => product._id !== id));
     } catch (err) {
       console.error('Error deleting product:', err);

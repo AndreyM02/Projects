@@ -99,7 +99,8 @@ const ProductForm = ({ onAdd }) => {
           Authorization: `Bearer ${token}`
         }
       };
-      await axios.post('http://localhost:5000/api/products', product, config);
+      const apiUrl = process.env.REACT_APP_API_URL;
+      await axios.post(`${apiUrl}/api/products`, product, config);
       //onAdd(response.data);
       // Reset form after successful submission
       setProduct({ name: '', description: '', price: '', imageUrl: '', category: '' });

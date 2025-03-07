@@ -14,7 +14,8 @@ const Orders = () => {
       try {
         const token = localStorage.getItem('token');
         const config = { headers: { Authorization: `Bearer ${token}` } };
-        const response = await axios.get('http://localhost:5000/api/orders', config);
+        const apiUrl = process.env.REACT_APP_API_URL;
+        const response = await axios.get(`${apiUrl}/api/orders`, config);
         // Depending on your response structure, adjust accordingly:
         setOrders(response.data.orders || response.data);
       } catch (err) {

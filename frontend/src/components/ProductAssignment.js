@@ -10,7 +10,8 @@ const ProductAssignment = () => {
     try {
       const token = localStorage.getItem('token');
       const config = { headers: { Authorization: `Bearer ${token}` } };
-      const response = await axios.get('http://localhost:5000/api/products', config);
+      const apiUrl = process.env.REACT_APP_API_URL;
+      const response = await axios.get(`${apiUrl}/api/products`, config);
       setProducts(response.data.products || []);
     } catch (err) {
       console.error(err);
@@ -31,11 +32,12 @@ const ProductAssignment = () => {
       const token = localStorage.getItem('token');
       const config = { headers: { Authorization: `Bearer ${token}` } };
       const sellerEmail = sellerEmails[productId];
+      const apiUrl = process.env.REACT_APP_API_URL;
       if (!sellerEmail) {
         alert('Please enter a seller email.');
         return;
       }
-      await axios.put(`http://localhost:5000/api/products/${productId}/assign`, { sellerEmail }, config);
+      await axios.put(`${apiUrl}/api/products/${productId}/assign`, { sellerEmail }, config);
       alert('Product assigned successfully.');
       fetchProducts();
     } catch (err) {

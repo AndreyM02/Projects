@@ -62,7 +62,8 @@ const Product = ({ product, onDelete }) => {
       const token = localStorage.getItem('token');
       const config = { headers: { Authorization: `Bearer ${token}` } };
       // POST request to add the product to the cart with default quantity of 1
-      await axios.post('http://localhost:5000/api/cart', { productId: product._id, quantity: 1 }, config);
+      const apiUrl = process.env.REACT_APP_API_URL;
+      await axios.post(`${apiUrl}/api/cart`, { productId: product._id, quantity: 1 }, config);
       alert('Product added to cart!');
     } catch (error) {
       console.error('Failed to add product to cart:', error);

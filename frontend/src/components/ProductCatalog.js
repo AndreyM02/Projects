@@ -20,7 +20,8 @@ const ProductCatalog = () => {
              Authorization: `Bearer ${token}`,
            },
          };
-        const response = await axios.get('http://localhost:5000/api/public/products', config);
+         const apiUrl = process.env.REACT_APP_API_URL;
+        const response = await axios.get(`${apiUrl}/api/public/products`, config);
         setProducts(response.data.products || []);
       } catch (error) {
         console.error('Error fetching products:', error);
