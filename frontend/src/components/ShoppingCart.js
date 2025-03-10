@@ -145,6 +145,7 @@ import { Link } from 'react-router-dom';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import CheckoutButton from './CheckoutButton';
+import CheckoutPage from './CheckoutPage';
 
 // Create a Stripe promise using your publishable key (make sure your env variable is set)
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
@@ -256,7 +257,7 @@ const ShoppingCart = () => {
             <Elements stripe={stripePromise}>
               {/* For demonstration, we pass a default shippingAddress. 
                   In production you might prompt the user for shipping details. */}
-              <CheckoutButton
+              <CheckoutPage
                 // shippingAddress={{
                 //   name: 'Test User',
                 //   address: '123 Main St',

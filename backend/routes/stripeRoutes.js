@@ -7,7 +7,11 @@ const asyncHandler = fn => (req, res, next) => Promise.resolve(fn(req, res, next
 router.post('/create-checkout-session', asyncHandler(async (req, res) => {
   // Destructure dynamic data from req.body
   // const { shippingAddress, amount } = req.body;
-  const { amount } = req.body;
+  const { amount, shippingAddress } = req.body;
+
+  const shippingData = typeof shippingAddress === 'string'
+  ? JSON.parse(shippingAddress)
+  : shippingAddress;
   
   if (!amount) {
     return res.status(400).json({ message: 'Amount is required' });
@@ -27,6 +31,13 @@ router.post('/create-checkout-session', asyncHandler(async (req, res) => {
       quantity: 1,
     }],
     mode: 'payment',
+    metadata: {
+      shipping_name: shippingData.name,
+      shipping_address: shippingData.address,
+      shipping_city: shippingData.city,
+      shipping_postalCode: shippingData.postalCode,
+      shipping_country: shippingData.country
+    },  
     success_url: `${req.headers.origin}/success?session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${req.headers.origin}/cancel`,
   });

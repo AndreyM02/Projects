@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Orders.css';
+import { Link } from 'react-router-dom';
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
@@ -76,6 +77,9 @@ const Orders = () => {
           </div>
         ))
       )}
+      <div className="text-center mt-4">
+        <Link to="/" className="btn btn-primary">Return to Home</Link>
+      </div>
     </div>
   );
 };
