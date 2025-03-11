@@ -40,7 +40,7 @@ A full‑stack e-commerce application built to showcase a complete online store 
 ## Clone the Repository
 
 ### bash
-- git clone https://github.com/yourusername/menswear-marketplace.git
+- git clone https://github.com/AndreyM02/Projects.git
 - cd menswear-marketplace
 - Backend Setup
 - bash
