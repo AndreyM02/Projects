@@ -33,7 +33,7 @@ A full‑stack e-commerce application built to showcase a complete online store 
 - **Frontend:** React, React Router, Bootstrap, Axios
 - **Backend:** Node.js, Express, MongoDB, Mongoose
 - **Payment Processing:** Stripe (using Stripe Checkout Sessions)
-- **Deployment:** Can be deployed locally, and uses serverless functions (via Aircode) for payment-related operations if desired.
+- **Deployment:** Deployed on Render
 
 ## Installation
 
