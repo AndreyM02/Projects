@@ -213,3 +213,34 @@
 {"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-04T19:15:49.880Z"}
 {"level":"info","message":"Server running on port 5000","timestamp":"2025-03-05T18:22:55.394Z"}
 {"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-05T18:22:56.998Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-03-06T19:52:03.980Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-06T19:52:05.081Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-03-06T21:11:42.187Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-06T21:11:43.225Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-03-07T15:11:57.300Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-07T15:11:58.294Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-03-07T20:02:51.381Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-07T20:02:52.341Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-03-07T20:08:10.783Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-07T20:08:11.806Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-03-07T20:09:28.868Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-07T20:09:30.180Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-03-07T20:10:53.747Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-07T20:10:54.679Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-03-10T17:26:20.113Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-10T17:26:21.097Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-03-10T17:47:48.449Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-10T17:47:49.464Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-03-10T18:35:38.321Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-10T18:35:39.293Z"}
+{"level":"error","message":"Unhandled Error: Invalid value for `metadata`. Metadata must be a single object containing key-value pairs.  See the metadata documentation for more details: https://docs.stripe.com/api/metadata","timestamp":"2025-03-10T18:54:57.432Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-03-10T18:57:12.300Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-10T18:57:13.383Z"}
+{"level":"error","message":"Unhandled Error: Invalid value for `metadata`. Metadata must be a single object containing key-value pairs.  See the metadata documentation for more details: https://docs.stripe.com/api/metadata","timestamp":"2025-03-10T18:57:48.950Z"}
+{"level":"error","message":"Unhandled Error: Invalid value for `metadata`. Metadata must be a single object containing key-value pairs.  See the metadata documentation for more details: https://docs.stripe.com/api/metadata","timestamp":"2025-03-10T18:58:50.163Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-03-10T19:00:25.662Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-10T19:00:26.651Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-03-10T19:09:27.398Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-10T19:09:28.448Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-03-10T19:16:04.467Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-10T19:16:05.475Z"}

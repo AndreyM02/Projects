@@ -19,7 +19,8 @@ const Register = () => {
 
     try {
       // Adjust the URL if needed (assuming backend runs on port 5000)
-      const response = await axios.post('http://localhost:5000/api/auth/register', { email, password });
+      const apiUrl = process.env.REACT_APP_API_URL;
+      const response = await axios.post(`${apiUrl}/api/auth/register`, { email, password });
       // Store the token (for example, in localStorage) to use in protected routes
       localStorage.setItem('token', response.data.token);
       // Redirect to a protected page (e.g., your product management page)

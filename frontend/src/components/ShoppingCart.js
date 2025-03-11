@@ -145,6 +145,7 @@ import { Link } from 'react-router-dom';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import CheckoutButton from './CheckoutButton';
+import CheckoutPage from './CheckoutPage';
 
 // Create a Stripe promise using your publishable key (make sure your env variable is set)
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
@@ -159,7 +160,8 @@ const ShoppingCart = () => {
     try {
       const token = localStorage.getItem('token');
       const config = { headers: { Authorization: `Bearer ${token}` } };
-      const response = await axios.get('http://localhost:5000/api/cart', config);
+      const apiUrl = process.env.REACT_APP_API_URL;
+      const response = await axios.get(`${apiUrl}/api/cart`, config);
       setCartItems(response.data);
     } catch (err) {
       console.error(err);
@@ -181,7 +183,8 @@ const ShoppingCart = () => {
     try {
       const token = localStorage.getItem('token');
       const config = { headers: { Authorization: `Bearer ${token}` } };
-      await axios.put(`http://localhost:5000/api/cart/${id}`, { quantity: newQuantity }, config);
+      const apiUrl = process.env.REACT_APP_API_URL;
+      await axios.put(`${apiUrl}/api/cart/${id}`, { quantity: newQuantity }, config);
       fetchCart();
     } catch (err) {
       console.error(err);
@@ -193,7 +196,8 @@ const ShoppingCart = () => {
     try {
       const token = localStorage.getItem('token');
       const config = { headers: { Authorization: `Bearer ${token}` } };
-      await axios.delete(`http://localhost:5000/api/cart/${id}`, config);
+      const apiUrl = process.env.REACT_APP_API_URL;
+      await axios.delete(`${apiUrl}/api/cart/${id}`, config);
       setCartItems(cartItems.filter(item => item._id !== id));
     } catch (err) {
       console.error(err);
@@ -253,7 +257,7 @@ const ShoppingCart = () => {
             <Elements stripe={stripePromise}>
               {/* For demonstration, we pass a default shippingAddress. 
                   In production you might prompt the user for shipping details. */}
-              <CheckoutButton
+              <CheckoutPage
                 // shippingAddress={{
                 //   name: 'Test User',
                 //   address: '123 Main St',

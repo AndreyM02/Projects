@@ -36,7 +36,8 @@ const Profile = () => {
       try {
         const token = localStorage.getItem('token');
         const config = { headers: { Authorization: `Bearer ${token}` } };
-        const response = await axios.get('http://localhost:5000/api/auth/profile', config);
+        const apiUrl = process.env.REACT_APP_API_URL;
+        const response = await axios.get(`${apiUrl}/api/auth/profile`, config);
         // Assuming response.data returns { name, phone, address }
         setName(response.data.name || '');
         setPhone(response.data.phone || '');
@@ -58,7 +59,8 @@ const Profile = () => {
       const token = localStorage.getItem('token');
       const config = { headers: { Authorization: `Bearer ${token}` } };
       const payload = { name, phone, address };
-      const response = await axios.put('http://localhost:5000/api/auth/profile', payload, config);
+      const apiUrl = process.env.REACT_APP_API_URL;
+      const response = await axios.put(`${apiUrl}/api/auth/profile`, payload, config);
       setMessage(response.data.message || 'Profile updated successfully.');
     } catch (err) {
       console.error('Error updating profile:', err);

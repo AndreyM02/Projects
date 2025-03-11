@@ -62,8 +62,9 @@ const CheckoutButton = ({ amount }) => {
       // console.log(amount);
       const token = localStorage.getItem('token');
       const config = { headers: { Authorization: `Bearer ${token}` } };
+      const apiUrl = process.env.REACT_APP_API_URL;
       // Call the backend to create a Checkout Session with shipping info and total (converted to cents)
-      const response = await axios.post('http://localhost:5000/api/stripe/create-checkout-session', {
+      const response = await axios.post(`${apiUrl}/api/stripe/create-checkout-session`, {
         // shippingAddress,
         amount: amount * 100, // converting dollars to cents
       }, config);

@@ -27,7 +27,8 @@ const LandingPage = () => {
          };
         // Adjust this URL as needed (if your GET /api/products endpoint is protected,
         // you might need to attach a token or create an endpoint that returns public/featured products)
-        const response = await axios.get('http://localhost:5000/api/public/products');
+        const apiUrl = process.env.REACT_APP_API_URL;
+        const response = await axios.get(`${apiUrl}/api/public/products`);
         // For example, select the first 3 products as "featured"
         setFeaturedProducts(response.data.products.slice(0, 3));
       } catch (error) {

@@ -37,9 +37,9 @@ A full‑stack e-commerce application built to showcase a complete online store 
 
 ## Installation
 
-### Clone the Repository
+## Clone the Repository
 
-- bash
+### bash
 - git clone https://github.com/yourusername/menswear-marketplace.git
 - cd menswear-marketplace
 - Backend Setup
@@ -47,29 +47,29 @@ A full‑stack e-commerce application built to showcase a complete online store 
 - Copy
 - cd backend
 - npm install
-- Create a .env file in the backend folder with the following variables:
+ ### Create a .env file in the backend folder with the following variables:
 - env
 - Copy
 - MONGO_URI=your_mongodb_connection_string
 - STRIPE_SECRET_KEY=sk_test_XXXXXXXXXXXXXXXXXXXXXXXX
 - JWT_SECRET=your_jwt_secret
 - ALLOWED_ORIGINS=http://localhost:3000
-- Frontend Setup
+### Frontend Setup
 - bash
 - Copy
 - cd ../frontend
 - npm install
-- Create a .env file in the frontend folder with:
+###Create a .env file in the frontend folder with:
 - env
 - Copy
 - REACT_APP_STRIPE_PUBLISHABLE_KEY=pk_test_XXXXXXXXXXXXXXXXXXXXXXXX
-- Run the Application
-- Backend
+### Run the Application
+### Backend
 - bash
 - Copy
 - cd ../backend
 - npm start
-- Frontend
+### Frontend
 - bash
 - Copy
 - cd ../frontend
