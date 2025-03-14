@@ -13,7 +13,7 @@ import ChangePassword from './components/ChangePassword';
 import ProductForm from './components/ProductForm';
 import ProductAssignment from './components/ProductAssignment';
 import AdminDashboard from './components/AdminDashboard';
-import UserManagement from './components/UserManagement';
+import UserManagement from './components/UserManagement'; 
 import LandingPage from './components/LandingPage';
 import ShoppingCart from './components/ShoppingCart';
 import Checkout from './components/Checkout';
@@ -36,8 +36,8 @@ function App() {
         <Route path="/products" element={<ProductList />} />
         <Route path="/add-product" element={<ProductForm />} />
         <Route path="/change-password" element={<ChangePassword />} />
-        <Route path="/cart" element={<ShoppingCart />} />
         <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/cart" element={<ShoppingCart />} />
         <Route path="/admin/users" element={<UserManagement />} />
         <Route path="/product-assignment" element={<ProductAssignment />} />
         <Route path="/checkout" element={<Checkout />} />

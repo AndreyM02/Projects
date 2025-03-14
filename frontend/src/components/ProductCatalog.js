@@ -12,15 +12,9 @@ const ProductCatalog = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-
-         // Retrieve token from localStorage
-         const token = localStorage.getItem('token');
-         const config = {
-           headers: {
-             Authorization: `Bearer ${token}`,
-           },
-         };
-         const apiUrl = process.env.REACT_APP_API_URL;
+        const token = localStorage.getItem('token');
+        const config = token ? { headers: { Authorization: `Bearer ${token}` } } : {};
+        const apiUrl = process.env.REACT_APP_API_URL;
         const response = await axios.get(`${apiUrl}/api/public/products`, config);
         setProducts(response.data.products || []);
       } catch (error) {

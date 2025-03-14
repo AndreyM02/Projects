@@ -37,7 +37,7 @@ const LandingPage = () => {
     };
 
     const token = localStorage.getItem('token');
-             console.log("Token from localStorage:", token);
+            //  console.log("Token from localStorage:", token);
             if (token) {
               try {
                 const decoded = jwtDecode(token);
